@@ -1,0 +1,5 @@
+png(filename="soft vs hard bounce.png",width=1800,height=950,res=300)
+new_total<-read.csv("count soft hard bounce.csv",head=TRUE)
+bp=barplot(as.matrix(new_total),main="Soft VS Hard Bounce",col=c("blue","orange"),beside=TRUE,cex.names=0.4,cex.axis = 0.4,xlab="Type of Bounce",ylab="Number",cex.lab=0.4,cex.main=0.6, ylim=c(0, 200))
+legend("topright",legend=c("Hard Bounce","Soft Bounce"),fill=c("blue","orange"),ncol=3,bty ="n",cex=0.4)
+dev.off()

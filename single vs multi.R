@@ -1,0 +1,5 @@
+png(filename="single vs multi platform.png",width=1800,height=950,res=300)
+new_total<-read.csv("single vs multi platform stats click and open.csv",head=TRUE)
+bp=barplot(as.matrix(new_total),main="Single VS Multi platform statistics",col=c("blue","orange"),beside=TRUE,cex.names=0.6,cex.axis = 0.6,xlab="Type of User",ylab="Rates",cex.lab=0.6,cex.main=0.6, ylim=c(0, 0.6))
+legend("topleft",legend=c("Single Platform User","Multi Platform User"),fill=c("blue","orange"),ncol=3,bty ="n",cex=0.6)
+dev.off()

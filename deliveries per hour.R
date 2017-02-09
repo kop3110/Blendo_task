@@ -1,0 +1,11 @@
+png(filename="open vs click per hour.png",width=1800,height=950,res=300)
+new_total<-read.csv("open vs click delivery hours transposed.csv",head=TRUE)
+new_total1<-read.csv("click delivery hours.csv",head=TRUE)
+new_total2<-read.csv("open delivery hours.csv",head=TRUE)
+percent1=round(100*new_total1$count_of_open_per_hour/sum(new_total1$count_of_open_per_hour),1)
+percent2=round(100*new_total2$count_of_open_per_hour/sum(new_total2$count_of_open_per_hour),1)
+barlabel<- paste(percent2)
+bp=barplot(as.matrix(new_total),main="Open VS Clicks per hour",col=c("blue","orange"),cex.names=0.4,cex.axis = 0.4,xlab="Hour",ylab="Deliveries",cex.lab=0.4,cex.main=0.6, ylim=c(0, 1000))
+legend("topleft",legend=c("Open per hour","Clicks per hour"),fill=c("blue","orange"),ncol=3,bty ="n",cex=0.4)
+dev.off()
+

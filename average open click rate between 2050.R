@@ -1,0 +1,11 @@
+png(filename="average_open_rate_click_20_40.png",width=1800,height=950,res=300)
+new_total<-read.csv("location country code statistics open click between 0.2 0.4.csv",head=TRUE)
+new_total1<-read.csv("location country code statistics open click.csv",head=TRUE)
+data_1<-(new_total1$stats_avg_open_rate)
+data_2<-(new_total1$stats_avg_click_rate)
+data_3<-(new_total1$location_country_code)
+bp=barplot(as.matrix(new_total),main="Location with open and click rate between 0.2 and 0.4",cex.names=0.5)
+text(bp, data_1[data_1>0.2 & data_1<0.4]+0.01, data_1[data_1>0.2 & data_1<0.4],cex=0.5)
+text(bp, data_2[data_1>0.2 & data_1<0.4]+0.01, data_2[data_1>0.2 & data_1<0.4],cex=0.5)
+dev.off()
+
